@@ -1,5 +1,6 @@
 <?php
-
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: *");
 $superheroes = [
   [
       "id" => 1,
@@ -64,9 +65,32 @@ $superheroes = [
 ];
 
 ?>
+<?php $param = $_GET['query'];
+$newParam = filter_var($param, FILTER_SANITIZE_STRING);
+$string = "A.K.A. ";
 
+$findSuperhero = [];
+$foundOne = FALSE;
+?>
+<?php if ($newParam == '' OR is_int($newParam) == TRUE):?>
 <ul>
 <?php foreach ($superheroes as $superhero): ?>
   <li><?= $superhero['alias']; ?></li>
 <?php endforeach; ?>
 </ul>
+<?php else:?>
+<?php foreach ($superheroes as $heroes): ?>
+            <?php if ($newParam == $heroes['alias'] OR $newParam == $heroes['name']){
+                $findSuperhero = $heroes;
+                $foundOne = TRUE;
+            }
+            ?>
+<?php endforeach;?>
+<? if($foundOne):?>
+<h3 class = "heroAlias"><?= $findSuperhero['alias'];?></h3>
+<h4 class = "heroName"><?= $string . $findSuperhero['name'];?></h4>
+<p><?= $findSuperhero['biography'];?></p>
+        <?php else:?>
+        <h1 class = "notFound"> Superhero not Found</h1>
+<?php endif;?>
+        <?php endif;?>

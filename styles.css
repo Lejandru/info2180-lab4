@@ -1,0 +1,64 @@
+/* Body Edits */
+
+body{
+    background-color:#DCDCDC;
+}
+
+/* Searched Edits */
+
+.searched{
+    padding-top: 10px;
+    margin-left: 200px;
+}
+
+/* Top Bar Edits */
+
+.topbar{
+    text-align: center;
+    font-size: 50px;
+    background-color: #4169E1;
+    color:white;
+    padding: 50px 55px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Form Edits */
+
+.form-group{
+    margin-left: 200px;
+    display: inline;
+}
+#searches{
+    width: 50%;
+    padding: 15px;
+    border-radius: 5px;
+}
+.btn{
+    font-size: 15px;
+    padding: 14px;
+    background-color: #DC143C;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Result Edit */
+
+.resultsbar{
+    font-size: 25px;
+    color:black;
+    margin-left: 200px;
+}
+#results{
+    margin-left:200px;
+}
+.notFound{
+    color: red;
+}
+.heroAlias, .heroName{
+    padding:0;
+    margin: 0;
+}
+.heroName{
+    margin-top: -0.5px;
+}
